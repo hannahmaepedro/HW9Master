@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FOODTRIP</title>
+  <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body>
+
+  <!-- Start of  page ------------------------------------------------------------------>
+  <div data-role="page" id="home">
+
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Let's go on a FOOD TRIP</h1>
+<div data-role="navbar" data-theme='b'>
+  <ul>
+    <li><a href="#home">Home Page</a></li>
+    <li><a href="#Load">Add Restaurant to Visit</a></li>
+    <li><a href="#ListAll">Must Visit Restaurants</a></li>
+  </ul>
+</div><!-- /navbar -->
+    </div>
+
+    <!--   page content -->
+    <div data-role="content" data-theme='b'>
+      <div class="myHeader">
+        <h2> WELCOME!</h2>
+        <img class="center" id="image1" src="./images/plate.png" alt="picture of plate" class="center" >
+      </div>
+    </div>
+
+    <!--  page footer -->
+    <div data-role="footer" data-theme='b'>
+        <h1>Copyright 2022 by Hannah Pedro</h1>
+    </div>
+  </div>
+  <!-- End of  HOME page ------------------------------------------------------------------>
+
+
+
+<!-- Start of   DETAILS page ------------------------------------------------------------------>
+  <div data-role="page" id="details">
+  
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Here are the details</h1>
+      <div data-role="navbar" data-theme='b'>
+        <ul>
+            <li><a href="#home">Home Page</a></li>
+            <li><a href="#Load">Add Restaurant to Visit</a></li>
+            <li><a href="#ListAll">Must Visit Restaurants</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+  
+    <!--  content -->
+    <div data-role="content" data-theme='c'>
+      <p> Details About the Restaurant</p>
+      <p id="oneName"></p>
+      <p id="oneCity"></p>
+      <p id="oneState"></p>
+      <p id="oneCuisine"></p>
+      <p id="onePrice"></p>
+      <p id="oneURL" hidden></p>
+      <input type="button" value="Website" id="website" /> 
+      <!-- // changed id from URL  -->
+    </div>
+
+    <input type="button" value="Delete" id="delete" style="background: rgb(216, 11, 11)"/>
+  
+    <!--    footer -->
+    <div data-role="footer" data-theme='b'>
+        <h1>Copyright 2022 by Hannah Pedro</h1>
+    </div>
+  </div>
+<!-- Start of   DETAILS page ------------------------------------------------------------------>
+
+
+<!-- Start of  ADD restaurant page ------------------------------------------------------------------>
+  <div data-role="page" id="Load">
+    <!--  page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Add a Restaurant</h1>
+      <div data-role="navbar" data-theme='b'>
+        <ul>
+            <li><a href="#home">Home Page</a></li>
+            <li><a href="#Load">Add Restaurant to Visit</a></li>
+            <li><a href="#ListAll">Must Visit Restaurants</a></li>
+        </ul>
+      </div><!-- /navbar -->
+
+    </div>
+
+    <!-- page content -->
+  
+    <div data-role="content" data-theme='c'>
+      <h2>Enter the restaurant information</h2>
+      Enter the name <br />
+      <input type="text" value="" id="name" />
+      Enter the city <br />
+      <input type="text" value="" id="city" />
+      Enter the state <br />
+      <input type="text" value="" id="state" />
+      Enter the website <br />
+      <input type="text" value="" id="URL" />
+      
+    <div class="ui-field-contain">
+        <label for="select-cuisine">Select the cuisine</label>
+        <select name="select-cuisine" id="select-cuisine">
+            <option value="Select">Select one</option>
+            <option value="American">American</option>
+            <option value="Italian">Italian </option>
+            <option value="Asian">Asian</option>
+            <option value="Mediteranian">Mediteranian</option>
+            <option value="Indian">Indian</option>
+            <option value="European">European</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>        
+        
+    <div class="ui-field-contain">
+        <label for="select-priceRange">Select the Price Range</label>
+        <select name="select-priceRange" id="select-priceRange">
+            <option value="select">Select one</option>
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+            <option value="$$$$">$$$$</option>
+        </select>
+    </div>
+    
+    
+      <input type="button" value="Add restaurant" id="buttonAdd" data-inline="true" />
+      <input type="button" value="Clear Data" id="buttonClear" data-inline="true" />
+    </div>
+    
+    <!--   page footer -->
+    <div data-role="footer" data-theme='b'>
+        <h1>Copyright 2022 by Hannah Pedro</h1>
+    </div>
+  </div>
+  <!-- End of ADD #Load page ------------------------------------------------------------------>
+
+
+<!-- Start of MUST VISIT #ListAll page ------------------------------------------------------------------>
+  <div data-role="page" id="ListAll">
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Must Visit Restaurants</h1>
+      <div data-role="navbar" data-theme='b'>
+        <ul>          
+            <li><a href="#home">Home Page</a></li>
+            <li><a href="#Load">Add Restaurant to Visit</a></li>
+            <li><a href="#ListAll">Must Visit Restaurants</a></li>
+        </ul>
+      </div><!-- /navbar -->
+
+    </div>
+    <!--   page content -->
+    <div data-role="content" data-theme='e'>
+      <p> Must Visit Restaurants</p>
+      <div id="mustVisitList"></div>
+    
+      <input type="button" value="Sort By Name" id="buttonSortName" data-inline="true" />
+      <input type="button" value="Sort By Price Range" id="buttonSortPriceRange" data-inline="true" />
+    </div>
+
+
+    <!--   page footer -->
+    <div data-role="footer" data-theme='b'>
+        <h1>Copyright 2022 by Hannah Pedro</h1>
+    </div>
+  </div>
+  </div>
+  <!-- End of  page ------------------------------------------------------------------>
+
+
+</body>
+
+</html>
